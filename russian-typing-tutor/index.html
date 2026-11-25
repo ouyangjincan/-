@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="modern">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="俄语打字通 1.1：练习俄语 ЙЦУКЕН 键位、添加自己的文章，并可在现代蓝调与苏联构成主义风格之间切换。">
+  <title>俄语打字通 1.1 · Русский Клавиатор</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2312294a'/%3E%3Ctext x='32' y='46' font-size='40' text-anchor='middle' fill='%236cb6ff' font-family='Georgia'%3E%D0%AF%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    try {
+      const saved = JSON.parse(localStorage.getItem("ru-typing-tutor-v1") || "{}");
+      if (saved && saved.settings && saved.settings.theme === "constructivist") {
+        document.documentElement.setAttribute("data-theme", "constructivist");
+      }
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+      <a class="brand" href="#/home" data-nav aria-label="俄语打字通首页">
+        <span class="brand-mark"><span>Я</span><i></i></span>
+        <span class="brand-copy">
+          <strong>俄语打字通</strong>
+          <em>РУССКИЙ КЛАВИАТОР</em>
+        </span>
+        <span class="version-chip">v1.1</span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="主导航">
+        <a href="#/home" data-nav data-match="home"><span>首页</span></a>
+        <a href="#/courses" data-nav data-match="courses"><span>课程练习</span></a>
+        <a href="#/articles" data-nav data-match="articles"><span>文章练习</span></a>
+        <a href="#/game" data-nav data-match="game"><span>单词雨</span><i class="nav-dot"></i></a>
+        <a href="#/stats" data-nav data-match="stats"><span>学习统计</span></a>
+        <a href="#/alphabet" data-nav data-match="alphabet"><span>字母表</span></a>
+      </nav>
+
+      <div class="top-actions">
+        <span class="offline-pill" title="无需联网，进度保存在本机">离线可用</span>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换艺术风格" title="切换艺术风格"></button>
+        <button class="icon-btn" id="soundBtn" type="button" aria-label="切换音效" title="切换音效"></button>
+        <button class="icon-btn" id="settingsBtn" type="button" aria-label="设置" title="设置"></button>
+        <span class="user-chip" title="本机学习档案">
+          <span class="avatar">Я</span>
+          <span class="user-name">学习者</span>
+        </span>
+      </div>
+      </div>
+    </header>
+
+    <main id="app">
+      <section class="screen" id="screen-home" data-screen="home"></section>
+      <section class="screen" id="screen-courses" data-screen="courses"></section>
+      <section class="screen" id="screen-articles" data-screen="articles"></section>
+      <section class="screen" id="screen-practice" data-screen="practice"></section>
+      <section class="screen" id="screen-game" data-screen="game"></section>
+      <section class="screen" id="screen-stats" data-screen="stats"></section>
+      <section class="screen" id="screen-alphabet" data-screen="alphabet"></section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span class="footer-brand"><b>Я</b> 俄语打字通</span>
+        <span class="footer-note">用键盘认识俄语 · 从 ЙЦУКЕН 到普希金</span>
+        <span class="footer-meta">离线运行 <i></i> 进度保存在本机</span>
+      </div>
+    </footer>
+  </div>
+
+  <div id="modalRoot"></div>
+  <div id="toastRoot" class="toast-root" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript">请启用 JavaScript 后使用俄语打字通。</div>
+  </noscript>
+
+  <script src="js/data.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/practice.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
